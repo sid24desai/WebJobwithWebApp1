@@ -54,5 +54,5 @@ steps:
     azureSubscription: 'SID subscription (0151c365-f598-44d6-b4fd-e2b6e97cb2a7)'
     appType: 'webApp'
     WebAppName: 'valleywebappjob'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Agent.BuildDirectory)/**/*.zip'
     WebConfigParameters: '**/appsettings.json'
