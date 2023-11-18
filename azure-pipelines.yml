@@ -20,8 +20,16 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: '**/*.csproj'
+    projects: '**/WebJobExample.WebJob.csproj'
     arguments: '--output $(Build.BinariesDirectory)/publish_output/App_Data/jobs/continuous/YoutubeWebJob'
+    zipAfterPublish: false
+    modifyOutputPath: false
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--output $(Build.BinariesDirectory)/publish_output'
     zipAfterPublish: false
     modifyOutputPath: false
 
